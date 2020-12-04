@@ -1,0 +1,249 @@
+
+
+
+Sekcja 1: Selenium - wstęp teoretyczny
+
+
+
+2. Co zawiera w sobie Selenium?
+
+
+	Selenium - zbiór narzędzi
+
+	a)
+	Selenium IDE:
+	 - wtyczka do Firefoxa/Chroma umozliwiająca nagrywanie akcji wykonywanych w przeglądarce (i potem odtwarzanie)
+	 - bez języka programowania
+	 --- Firefox -> wtyczki firefox - SeleniumIDE 
+	 
+	b)
+	Selenium RC (Remote Control)
+	 - tworzenie testów za pomocą języka programowania (Java/Python)
+	 - przestarzałe
+	  składa się z:
+	  --- Selenium Serwer (wstrzykiwany jest odpowiedni kod js do przeglądarki bezpośrednio, ale... silniki js przeglądarek mogą się różnić między sobą)
+	  --- biblioteka Selenium
+	 
+	c)
+	Selenium WebDriver
+	 - nowsza wersja Selenium RC
+	 - tworzenie testów za pomocą języka programowania (Java/Python)
+	 składa się z:
+	  --- biblioteki Selenium WebDriver
+	  --- dedykowany WebDriver.exe
+
+	d)
+	Selenium Grid:
+	 - umożliwia tworzenie infrastruktury umozliwiającej uruchamianie testów na różnych środowiskach przeglądarek, np:
+ 		-- różne systemy operacyjne MacOS, Linux, Windows
+		-- różne wersje przeglądarek
+	 - testy współbieżne
+	 - potrzebny Selenium Serwer
+	 
+		testy na nszym lapku - jak to działa?
+		-- Selenium serwer na naszym lapku z rolą huba (punkt centralny) delegujący testy dalej
+		-- podpinamy do huba inne maszyny z rolą noda (różne konfiguracje)
+	
+	 
+
+
+6. Selenium WebDriver - wstęp teoretyczny
+
+	-----------------------------------------------------------              --------------------------------------               ----------------
+	- kod testów korzystający z biblioteki Selenium WebDriver -    < - >     - Driver dedykowany dla przeglądarki -     < - >     - Przeglądarka - 
+	-----------------------------------------------------------              --------------------------------------               ----------------
+
+	"Driver dedykowany dla przeglądarki" - co to jest?
+	-- oddzielny plik .exe
+	-- np ChromeDriver.exe
+	-- dzieki temu, ze mamy dedykowane WebDriver testy wykonują się szybciej (niż w Selenium RC)
+	-- WebDriver wspiera też testy w wersji mobilnej
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+30/11-
+------
+	xlrd - modul do czytania excela
+	pip serch selenium
+	pip unistall selenium
+	webdriver manager
+	
+	PyCharm skróty:
+	 *** 2 x SHIFT --- wyszukaj w projekcie
+	 *** CTRL + E  --- ostatnie pliki
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+01/12-
+------
+
+ CSS - Cascading Style Sheets:
+ Kaskadowe arkusze stylów
+ 
+ https://pl.wikipedia.org/wiki/Kaskadowe_arkusze_styl%C3%B3w
+ Pierwszy szkic CSS zaproponował w 1994 r. Håkon Wium Lie.
+	--- Język służący do opisu formy prezentacji (wyświetlania) stron WWW.
+	--- Arkusz stylów CSS to lista dyrektyw (tzw. reguł) ustalających w jaki sposób ma zostać wyświetlana przez przeglądarkę internetową zawartość wybranego elementu (lub elementów) (X)HTML lub XML.
+	--- Można nim opisać wszystkie pojęcia odpowiedzialne za prezentację elementów dokumentów internetowych (np: rodzina czcionek, kolor tekstu, marginesy lub nawet pozycja danego elementu względem innych elementów).
+	--- Wykorzystanie arkuszy stylów daje znacznie większe możliwości pozycjonowania elementów na stronie, niż oferuje sam (X)HTML.
+	--- 
+	--- CSS został stworzony w celu odseparowania struktury dokumentu od formy jego prezentacji.
+	--- Separacja ta zwiększa zakres dostępności witryny, zmniejsza zawiłość dokumentu, ułatwia wprowadzanie zmian w strukturze dokumentu.
+	--- CSS ułatwia także zmiany w renderowaniu strony w zależności od obsługiwanego medium (ekran, palmtop, dokument w druku, czytnik ekranowy).
+	--- Stosowanie zewnętrznych arkuszy CSS daje możliwość zmiany wyglądu wielu stron naraz bez ingerowania w sam kod (X)HTML, ponieważ arkusze mogą być wspólne dla wielu dokumentów.
+
+	
+	Cele CSS:
+	--- przeniesienie (do osobnego pliku niż glowny html) informacji dotyczących wyglądu dokumentów HTML (między innymi rodzaj i kolor czcionki, ułożenie, marginesy)
+	------ (Bez użycia CSS w przypadku definiowania stylu dla nagłówka (h1) lub podtytułu (h2) jego definicja musiałaby zostać powtórzona w każdym miejscu, w którym pojawia się dana struktura. Efektem takiego działania byłoby zmniejszenie czytelności dokumentu i jego odporności na błędy oraz trudność w utrzymaniu. Dodatkowo, zmiany stylu w jednym z miejsc wiązałyby się z koniecznością wprowadzania zmian w każdym miejscu wystąpienia.)
+
+	
+	Wsparcie przeglądarek:
+	--- histroycznie sporo problemów... Nawet w dzisiejszych czasach problemy te skutecznie utrudniają projektowanie stylów, a testowanie na maksymalnie wielu przeglądarkach jest nieodłączną częścią pracy.
+
+
+	Which css version is supported by your browser?
+	looks like it is not straight-forward question
+	--- CSS3 is not a version. It's a web standard so it's about browser-specific properties.
+	--- The question isn’t which version of CSS am I running, but which CSS properties are supported by the browsers my target audiences use?
+	
+
+
+	
+	CSS 1:
+	
+	CSS 1 jest w pełni obsługiwany przez współczesne, popularne przeglądarki, tj. oparte na następujących silnikach renderujących stronę
+	--- Gecko np. Firefox, Camino, SeaMonkey.
+	--- Trident głównie Internet Explorer.
+	--- Presto (Opera).
+	--- WebKit/ np. Safari, Google Chrome.
+	Jednym z testów sprawdzających CSS 1 jest Acid1.
+
+
+	
+	CSS 2:
+	--- W CSS 2 rozwiniętym do poziomu 2.1 wprowadzone zostały nowe selektory i właściwości.
+	--- 7 czerwca 2011 roku standard CSS 2.1
+	--- IE 8 – dołączyła jednak do pozostałych przeglądarek i w pełni przechodzi m.in. test Acid2, w którym testowano elementy standardu CSS 2.1.
+	--- CSS 2.1 opiera się na CSS 1 i z nielicznymi wyjątkami, wszystkie aktualne style pierwszego poziomu są też obecne w jego następcy.
+	--- CSS 2.1 obsługuje specyficzne medialne arkusze stylu tak, że autorzy mogą dostosować prezentację swoich dokumentów do wizualnych przeglądarek, urządzeń słuchowych, drukarek, urządzeń Braille’a, urządzeń ręcznych itd.
+	--- CSS 2.1 wspomaga ustawienie (pozycjonowanie) treści, obsługuje ściągalne czcionki, wspiera układ graficzny tabeli, internalizację, automatyczne liczniki, numerację i niektóre właściwości dotyczące interfejsu użytkownika.
+	
+	
+	
+	CSS 3:
+	--- Inaczej niż CSS 2 - CSS 3 podzielony jest na niezależne dokumenty zwane modułami.
+	--- Każdy moduł zawiera nowe możliwości i rozszerza elementy zdefiniowane w CSS 2, tak, żeby zachowywały kompatybilność z wersjami wcześniejszymi. Dodano także nowe znaczniki i właściwości.
+	--- W wyniku podziału na moduły poszczególne elementy CSS 3 mają różny status czy poziom stabilności, ale dzięki podziałowi mogą być opublikowane jako obowiązujące niezależnie od etapu pracy nad pozostałymi elementami.
+	
+	--- W czerwcu 2012 roku CSS Working Group miało opublikowanych ponad 50 różnych modułów. Kilka z nich zostało oficjalnie zarekomendowanych jako standard przez W3C, np.: media queries, namespaces, selectors
+	
+	
+	CSS - Zalety i ograniczenia:
+	--- Największą zaletą CSS jest umożliwienie rozdzielenia warstwy prezentacji od warstwy danych.
+	--- w przypadku potrzeby wprowadzenia zmian w definicji stylu wykorzystanego dla el występującego wielokrotnie, w dok HTML w pliku CSS zmiany są wprowadzane raz, a zmiana jest adaptowana przez wszystkie elementy.
+	
+	--- niektóre operacje są zawiłe
+	
+	
+	CSS Frameworks
+	--- biblioteki, których zadaniem jest ułatwienie definicji stylu dla stron internetowych z wykorzystaniem kaskadowych arkuszy stylów.
+	--- Przykładem takich bibliotek są: Foundation, Blueprint, Bootstrap oraz Cascade Framework.
+	--- Podobnie jak w przypadku programowania i bibliotek, CSS Frameworks są zazwyczaj dołączane jako zewnętrzne pliki .css w znaczniku HTML <head>. Zapewniają one gotowe rozwiązania do projektowania stron.
+	
+	
+	Składnia arkuszy
+	--- selektor { właściwość: wartość }
+	--- selektor1, selektor2 { właściwość1: wartość1; właściwość2: wartość2; }
+	--- p { color: blue; }
+	--- Selektory zawarte w pierwszej specyfikacji CSS zapewniają możliwość opisania docelowej grupy elementów przez:
+	----- > name, class, id, link
+	
+	
+	Dodawanie stylów do dokumentu (html, xml, others)
+	--- za pomocą elementu link (osobny dokumentem CSS)
+	--- specyficzna dla XML-a instrukcja przetwarzania (osobny dokumentem CSS)
+	--- wewnątrz nagłówka dokumentu (X)HTML dzięki elementowi style
+
+
+	
+	Model kaskadowy
+	Flexbox
+	--- kontener, elementy
+	Zagrożenia
+	
+	
+	
+	
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+02/12-
+------
+	
+	Xpath
+	XML path language
+	
+	--- aplikowalny do xml, html formatów
+	
+
+Chrome:
+
+Copy full XPath 
+/html/body/table/tbody/tr[1]/th[1]
+Copy XPath 
+/html/body/table/tbody/tr[1]/th[1]
+
+document.querySelector("body > table > tbody > tr:nth-child(1) > th:nth-child(1)")
+
+Copy selector
+body > table > tbody > tr:nth-child(1) > th:nth-child(1)
+
+
+
+
+
+
+
+
+
+
+iframe - special html tag allowing putting FullHtmlWebsite inside this tag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
