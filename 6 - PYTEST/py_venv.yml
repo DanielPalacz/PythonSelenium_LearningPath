@@ -1,0 +1,13 @@
+name: py_venv
+channels:
+  - conda-forge
+  - defaults
+  - mro
+dependencies:
+  - python=3.7.*
+  - pytest=4.4.*
+  - pip=19.0.*
+  - pip:
+      - pycryptodomex==3.8.1
+      - pytest-mpl==0.10.*
+      - pytest-cov==2.6.*
