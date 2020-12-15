@@ -1,0 +1,32 @@
+
+1)
+How basic python pytest test may look?
+
+2)
+Naming Convention. 
+-- what are rules for naming of python files which will be running?
+-- what are rules for naming of python methods which will be running?
+
+3)
+@pytest.fixture() decorator
+-- how to write pytest fixture by using @pytest.fixture() decorator?
+-- how to write the code inside (pytest fixture) which will be run before/after decorated function?
+-- how to pass newly created fixture to test method?
+
+4)
+pytest.mark.parametrize() decorator
+-- how to use pytest.mark.parametrize() decorator for running test method with different parameter values?
+
+5)
+dealing with not working tests
+-- how to mark test to be skipped?
+-- how to mark test to be marked as failed (without execution)?
+
+6)
+running tests in parallel
+-- what package shoudl be installed to run tests in parallel?
+-- how to start pytest runner for running 3 tests in parallel?
+
+
+all as per 15/12/2020 - to be continued
+

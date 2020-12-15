@@ -1,0 +1,40 @@
+
+
+1)
+If we say that Selenium is set of 4 tools then what are these tools? Describe its.
+- Selenium IDE
+- Selenium RC (Remote Control)
+- Selenium WebDriver
+- Selenium Grid
+
+
+1a - Selenium IDE
+--- plugin for Chrome/Firefox 
+--- it allows recording of actions performed in browser (and playing it later)
+--- no programming language needed
+
+
+1b - Selenium RC (Remote Control) 
+--- it allows creating tests by using programming language (Java/Python). Obsoleted solution.
+--- it consist of:
+------ Selenium WebDriver library 
+------ Selenium server
+
+
+1c - Selenium WebDriver
+--- newer version of Selenium RC
+--- it allows creating tests by using programming language (Java/Python)
+--- support also mobile testing
+--- it consist of:
+------ Selenium WebDriver library
+------ dedicated WebDriver.exe (webdriver_manager python package supports auto downloading the WebDriver)
+
+
+1d - Selenium Grid
+--- allows to create infra for running tests on diff type of env:
+------ diff OS types
+------ diff browser types
+--- allows simultaneusly test runs
+--- Selenium server is needed
+--- different machines with 'node' role are linked to central 'hub' point
+--- tests are running on nodes (diff configuration there)
