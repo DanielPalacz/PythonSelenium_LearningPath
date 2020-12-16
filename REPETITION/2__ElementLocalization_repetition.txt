@@ -1,0 +1,20 @@
+
+1)
+There are 2 construct groups for finding elements:
+--	with BY		-> driver.find_element(By.(strategy), element_name)
+--	without BY	-> driver.specificStrategyLikeMethod()
+
+2)
+diffrent type of "specificStrategyLikeMethod" for finding elements.
+examples:
+-- driver.find_element_by_id(element_name)
+-- driver.find_element_by_name(name_attr)
+-- driver.find_element_by_link_text(link_text), driver.find_element_by_partial_link_text(partial_link_text)
+-- driver.find_element_by_class_name(class_name)
+-- driver.find_element_by_tag_name("a")
+-- driver.find_element_by_css_selector(css_selector_construct)
+-- driver.find_element_by_xpath(xpath_selector_construct)
+
+3)
+"driver.find_element_..." vs "driver.find_elements_..."
+

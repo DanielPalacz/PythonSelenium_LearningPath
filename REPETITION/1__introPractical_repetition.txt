@@ -1,4 +1,23 @@
 
+
 1)
+if we assume that general schema of tests writen by using Selenium Webdriver is as follow:
+	------------------------------------------------              ------------------------------------           -----------
+	- test code using Selenium WebDriver libraries -    < - >     - Dedicated Driver for the browser -   < - >   - browser - 
+	------------------------------------------------              ------------------------------------           -----------
+then
+the first goal is to attach Webrowser. What are options for this?
+
+
+2)
+Jump to new www. How?
+
+
+3)
+You can change window size. How?
+
+
+4)
+Closing window. Methods close() and quit() what is diffrence?
 
 

@@ -1,0 +1,46 @@
+
+
+1)
+first_name_input = driver.find_element_by_name("fname")
+
+if first_name_input.is_enabled():
+    print("IS ENABLED")
+    first_name_input.send_keys("John")
+
+
+
+2)
+checked_element = driver.find_element_by_tag_name("p")
+
+if checked_element.is_displayed():
+    print("IS DISPLAYED")
+else:
+    print("This element is hidden.")
+    print(checked_element.get_attribute("textContent"))
+
+
+
+3)
+# Selenium doesnt provide a method for checking if element exist
+# use 'elements'-like find methods for this
+searched_element_list = driver.find_elements_by_tag_name("p11")
+
+if not len(searched_element_list):
+    print("There is no such element.")
+
+try:
+    driver.find_element_by_tag_name("p111")
+except NoSuchElementException:
+    print("There is no such element.")
+	
+
+
+4)
+# How to check state of Checkbox element? (it is marked)
+searched_element = driver.find_element_by_xpath("//input[@type='checkbox']")
+#
+time.sleep(1)
+searched_element.click()
+#
+if searched_element.is_selected():
+    print("Checkbox is selected, so we will untick it.")

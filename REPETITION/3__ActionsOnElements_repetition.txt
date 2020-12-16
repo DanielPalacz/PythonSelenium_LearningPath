@@ -1,0 +1,152 @@
+
+1)
+driver.find_element_by_id("clickOnMe").click()
+
+
+2)
+# an exception will happen if it is not handled
+driver.switch_to.alert.accept()
+driver.switch_to.alert.dismiss()
+
+
+3)
+# how to provide values to text field
+driver.find_element_by_id("fname").send_keys("John123")
+
+
+4)
+# how to simulate Enter Clicking
+driver.find_element_by_name("password").send_keys(Keys.ENTER)
+
+
+5)
+# how to choose option from Select by using text / index / value:
+auto_select = Select(driver.find_element_by_tag_name("select"))
+auto_select.select_by_visible_text("Volvo")
+auto_select.select_by_value("saab")
+auto_select.select_by_index(2)
+
+
+6)
+# how to mark checkbox on page
+driver.find_element_by_xpath("//input[@type='checkbox']").click()
+
+
+7)
+# how to mark Radiobox on the page
+driver.find_element_by_xpath("//input[@type='radio'][@value='other']").click()
+
+
+8)
+# how to print text from the element:
+print(driver.find_element_by_tag_name("h1").text)
+# how to print text from the hidden element:
+print(driver.find_element_by_tag_name("p").get_attribute("textContent"))
+# how to print text from the recently inputted 'input box'
+print(driver.find_element_by_id("fname").get_attribute("value"))
+
+
+9)
+# Checking oif image is visible on teh Page:
+
+# --- go to property size + get("height")
+#     it will show exactly what is on teh page (16 if no image 223 if there is image)
+# --- get_attribute("naturalHeight")
+#     it will show 0 if no image or 223 if there is
+
+print(driver.find_element_by_id("smileImage").size.get("height"))
+print(driver.find_element_by_id("smileImage").get_attribute("naturalHeight"))
+# get_attribute("naturalHeight") --- recommended to be used for checking if image is visible on the page
+
+
+10)
+# 86__SwitchingToNewlyOpenedWebbrowserWindow
+
+# checking what is our current window name
+parent_windows_name = driver.current_window_handle
+# get all window names available for teh Webdriver
+window_names = driver.window_handles
+
+for window in window_names:
+  if window != parent_windows_name:
+    child_window = window
+    driver.switch_to.window(window)
+    break
+
+
+11)
+iframe - special html tag allowing putting FullHtmlWebsite inside this tag
+driver.switch_to.frame(driver.find_element_by_tag_name("iframe"))
+## and now you are in the iframe as in any other www
+
+
+12)
+# How to execute JavaScript code by using Selenium?
+# examples - by using JavaScript code:
+# 1 - we will click on the element
+# 2 - we will set value to text field
+# Ad.1)
+driver.execute_script("arguments[0].click();", driver.find_element_by_id("newPage"))
+# Ad.2)
+a1 = "text123"
+driver.execute_script("arguments[0].setAttribute('value', '" + a1 + "');", driver.find_element_by_id("fname"))
+
+# Selenium click(), sendKeys methods in some websites may not work --- then is must to use JS code
+
+
+13)
+# For double clicking you need to use special class: 'ActionChains'
+button = driver.find_element_by_id("bottom")
+webdriver.ActionChains(driver).double_click(button).perform()
+
+
+14)
+# Method clear()
+username_input = driver.find_element_by_name("username")
+username_input.clear()
+
+
+15)
+# The same 'ActionChains' class needs to be used regarding Right-clicking
+webdriver.ActionChains(driver).context_click(button).perform()
+
+
+16)
+# there is TUTORIALS Drop-Down menu on https://www.w3schools.com/ (id="navbtn_tutorials")
+tutorials_webelement = driver.find_element_by_id("navbtn_tutorials")
+webdriver.ActionChains(driver).move_to_element(tutorials_webelement).perform()
+
+
+17)
+# drag & drop
+draggable = driver.find_element_by_id("draggable")
+drop_target = driver.find_element_by_id("droptarget")
+webdriver.ActionChains(driver).drag_and_drop(draggable, drop_target).perform()
+
+
+18)
+# hovering and clicking:
+exercises_webelement = driver.find_element_by_id("navbtn_exercises")
+webdriver.ActionChains(driver).move_to_element(exercises_webelement).click(exercises_webelement).perform()
+
+19)
+# Uploading files is surprisingly easy:
+choose_file = driver.find_element_by_id("myFile")
+file_path = os.path.abspath("uploadMe.txt")
+choose_file.send_keys(file_path)
+
+
+20)
+# How to make screenshoots?
+driver.save_screenshot("screenshoots/after_upload.png")
+
+
+
+
+
+
+
+
+
+
+
