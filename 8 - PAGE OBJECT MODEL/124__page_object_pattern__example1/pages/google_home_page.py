@@ -9,3 +9,6 @@ class GoogleHomePage:
     def search_in_google(self, text):
         self.driver.find_element_by_name(self.search_input_name).send_keys(text)
         self.driver.find_element_by_name(self.search_button_name).click()
+
+
+
