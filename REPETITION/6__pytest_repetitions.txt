@@ -1,32 +1,144 @@
 
 1)
 How basic python pytest test may look?
+###### def test_basic():
+######     assert something
+
+
 
 2)
 Naming Convention. 
 -- what are rules for naming of python files which will be running?
+###### filename should have 'test' keyword in any place
 -- what are rules for naming of python methods which will be running?
+###### test method name has to start by 'test' keyword
+
+
 
 3)
 @pytest.fixture() decorator
--- how to write pytest fixture by using @pytest.fixture() decorator?
--- how to write the code inside (pytest fixture) which will be run before/after decorated function?
+-- how to write pytest fixture using @pytest.fixture() decorator?
+###### to your fixture method - take/&/glue @pytest.fixture() decorator as usual python decorator
+###### define what you want under your fixture method
+-- how to write the code inside (your own pytest fixture) which will be run before/after decorated function?
+###### everything defined before 'yield' keyword will be running before your test method
+###### everything defined after  'yield' keyword will be running after your test method
 -- how to pass newly created fixture to test method?
+###### as argument
+###### lets have your own pytest fixture method named 'my_own_pytest_fixture_method'
+###### then in test method definition: def test_method_definition('my_own_pytest_fixture_method')
+-- !!!!!!!
+-- comments
+###### it is theoretical not-natural example. Normally fixture will be written in separate class (or in conftest file)
+
+
 
 4)
 pytest.mark.parametrize() decorator
 -- how to use pytest.mark.parametrize() decorator for running test method with different parameter values?
+###### the below go/glue to your test method
+###### @pytest.mark.parametrize("name1,name21", [(name1_val1,arg_name2_val1),(name1_val2,arg_name2_val2)])
+###### -- first names of arguments
+###### -- later list with tuples of values for those arguments
+
+
 
 5)
 dealing with not working tests
 -- how to mark test to be skipped?
--- how to mark test to be marked as failed (without execution)?
+-- how to mark test to be marked as failed (without execution) when you are aware about issues?
+###### the below go/glue to your test method
+###### @pytest.mark.skip
+###### @pytest.mark.xfail
+
+
 
 6)
 running tests in parallel
 -- what package shoudl be installed to run tests in parallel?
 -- how to start pytest runner for running 3 tests in parallel?
+###### pip install pytest-xdist
+###### pytest -n 3
+###### pytest test_filename.py -n 3
 
 
-all as per 15/12/2020 - to be continued
+
+7)
+Pytest with python logging module
+###### pytest.ini example
+###### in the Page Object classes add logger field (self.logger = logging.getLogger(__name__))
+
+
+
+8)
+Add Allure reporting to Pytest/Selenium suite.
+
+
+
+9)
+What is doing @pytest.mark.usefixtures("fixture_name")?
+###### (in pytest) it is way of passing fixtures to test methods groupped under TestClass
+###### what will happen if we have more than 1 test method under TestClass?
+
+
+
+10)
+pytest / conftest
+###### there was issue with passing fixture driver object (from conftest) to test method
+###### it was about visibility of driver object in in the test method
+-- then how from conftest level set value of driver field in the test method?
+###### to fixture method setup() (from conftest) we can pass 'request' parameter
+###### and inside body of fixture method we can add: request.cls.driver = driver (this will pass to the TestClass argument driver object)
+
+
+
+https://stackoverflow.com/questions/34466027/in-pytest-what-is-the-use-of-conftest-py-files
+(much more use case than supporting pytest fixtures groupping)
+-----
+Fixtures are a potential and common use of conftest.py. The fixtures that you will define will be shared among all tests in your test suite. 
+However, defining fixtures in the root conftest.py might be useless and it would slow down testing if such fixtures are not used by all tests.
+-----
+
+Does it have other uses?
+
+1. Fixtures: 
+Define fixtures for static data used by tests. This data can be accessed by all tests in the suite unless specified otherwise. 
+This could be data as well as helpers of modules which will be passed to all tests.
+
+2. External plugin loading:
+conftest.py is used to import external plugins or modules.
+
+3. Hooks
+You can specify hooks such as setup and teardown methods and much more to improve your tests.
+pytest calls hook functions to implement initialization, running, test execution and reporting.
+
+4. Test root path: 
+This is a bit of a hidden feature. By defining conftest.py in your root path, you will have pytest recognizing your application modules without specifying PYTHONPATH. 
+In the background, py.test modifies your sys.path by including all submodules which are found from the root path.
+
+
+
+
+
+What is hook?
+--
+hooking covers a range of techniques used to alter or augment the behaviour of an operating system, of applications, or of other software components by intercepting function calls or messages or events passed between software components. Code that handles such intercepted function calls, events or messages is called a hook.
+--
+In a generic sense, a "hook" is something that will let you, a programmer, view and/or interact with and/or change something that's already going on in a system/program.
+--
+Simple said:
+A hook is a means of executing custom code (function) either before, after, or instead of existing code. For example, a function may be written to "hook" into the login process in order to execute a Captcha function before continuing on to the normal login process.
+--
+Hooks are a category of function that allows base code to call extension code. This can be useful in situations in which a core developer wants to offer extensibility without exposing their code.
+--
+
+
+
+
+
+
+
+
+
+
 
