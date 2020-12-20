@@ -1,0 +1,56 @@
+
+
+1)
+What is Page Object model (theory)?
+--- (automation test) design pattern, the way of code organizing
+--- schema for encapsulating Www pages into classes
+--- one of the most popular approach for designing Web Automation tests (currently)
+
+
+
+2)
+What is Page Object model in practice (1 approach)?
+-- every Page object class delivers API for using the given/unique Www Page
+-- it doesnt have to be API covering everything in the given/unique Www Page
+-- Page object class API provides:
+---- field definitions with selectors values
+---- fields for other functionalities (drivers, logging, etc)
+---- methods emulating real Www Page usage
+-- later this API is used for building automated tests
+
+
+
+3)
+Python Selenium - Page Object model - the best practices
+and ... this question could be answered also under: "How to build optimal Python/Selenium Web Automation Test Frameworks"
+
+-- should selectors be maintained in the separate file? Or better to glue them to the given Page Object Class?
+-- how to manage grupping the Page Objects?
+
+
+
+
+
+
+****************************************************************************************************************************************************************************************************************************
+****************************************************************************************************************************************************************************************************************************
+****************************************************************************************************************************************************************************************************************************
+
+Other_1)
+Page Factory? What is going on with this
+It initially appeared as Java class in Selenium WebDrive as solution implementing a Page Object Model.
+Looks like in Java, due to languague nature there are some reason of using this. However there are diffirent opinions about optimality of this solution.
+
+Other_2)
+Page Factory in Python Selenium?
+We can find py-packages replication Java class way of this (pageobject_support, pagefactory_support, selenium-page-factory).
+I do like this answer from stackoverflow:
+https://stackoverflow.com/questions/8469530/does-webdriver-support-pagefactory-for-python/30758982
+-- Dynamically-typed languages like Python are less obsessed by design patterns to create objects - because it is trivially easy just create object of any type (with proper methods) and return it. Patterns are common solutions to common problems. If something is not a problem, you don't need a pattern to deal with it :-) OOP was initially a design pattern in C.
+-- In our homegrown framework for page automation (for automated UI testing and other purposes), we do use pageobject design pattern, but had no need for a page factory. Old-school inheritance from our custom BasePage covered all our (quite diversified) needs. We do use few tricks to create page elements and make sure that proper page was instantiated, and based on that experience I like that our PageObject is simple.
+-- Also, Python allows for multiple inheritance, if your needs grow more complicated.
+-- In my experience (using Python, Selenium and WebDriver for more than 5 years now), lack of page factory pattern is a sign that you don't need it, not that it cannot be implemented.
+
+****************************************************************************************************************************************************************************************************************************
+****************************************************************************************************************************************************************************************************************************
+****************************************************************************************************************************************************************************************************************************
