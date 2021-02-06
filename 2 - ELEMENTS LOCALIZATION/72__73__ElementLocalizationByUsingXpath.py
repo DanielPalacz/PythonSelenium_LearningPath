@@ -50,5 +50,8 @@ print(len(driver.find_elements_by_xpath("//th")))
 driver.find_elements_by_xpath("//*[@id='idOfYourHiddenElement' and @type='hidden']")
 driver.find_element_by_xpath("//input[@type='radio'][@value='other']").click()
 
+# Combine the conditions within the [...]
+# E.g., //div[@class='xxxx' and contains(text(), 'justin')].
+
 # the above examples will find "THE FIRST ELEMENT"
 # if all matching elements should be found then use: driver.find_elements_by_xpath()
