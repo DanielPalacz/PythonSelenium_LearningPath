@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
+from selenium.webdriver import ActionChains
 import time
 
 # chromedriver file directly attached to the script
@@ -22,3 +23,8 @@ webdriver.ActionChains(driver).move_to_element(tutorials_webelement).perform()
 time.sleep(2)
 exercises_webelement = driver.find_element_by_id("navbtn_exercises")
 webdriver.ActionChains(driver).move_to_element(exercises_webelement).perform()
+
+#
+# action = ActionChains(driver)
+# menu = driver.find_element_by_id("mousehover")
+# action.move_to_element(menu).perform()

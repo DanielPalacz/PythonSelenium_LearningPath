@@ -2,6 +2,9 @@
 
 1)
 What functionality represents "Implicit Wait"
+-----> wait x seconds if object is not displayed
+-----> it applies globally
+-----> if object is found faster than x seconds then execution will resume faster
 
 driver.implicitly_wait(10)
 driver.find_element_by_id("clickOnMe").click()
@@ -15,6 +18,8 @@ driver.find_element_by_id("clickOnMe").click()
 # WebDriverWait(driver, timeout, freq, IgnoredException)
 wait = WebDriverWait(driver, 10, 0.5, NoSuchElementException)
 
+-----> explicit
+
 
 
 3)
@@ -25,7 +30,7 @@ wait.until(expected_conditions.visibility_of_element_located((By.TAG_NAME, "p"))
 
 
 4)
-Defining specific condition for Wait if predefinied conditions from 'expected_conditions' are not enough for us.
+Defining specific condition for Wait if pre-definied conditions from 'expected_conditions' are not enough for us.
 
 #
 # Option 1 - 105)

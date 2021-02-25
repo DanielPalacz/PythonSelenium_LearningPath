@@ -1,0 +1,15 @@
+
+
+# go to previous WebPage:
+driver.back()
+
+# reload WebPage:
+driver.refresh()
+
+# maximize / maximize:
+driver.maximize_window()
+driver.minimize_window()
+
+# clear content
+driver.clear()
+

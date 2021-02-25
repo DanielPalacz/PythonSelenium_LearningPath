@@ -60,3 +60,5 @@ driver.find_element_by_xpath("//span/span[text()='Zgadzam się']").click()
 
 time.sleep(1)
 driver.quit()
+
+# remember to switch back from iFrame:  driver.switch_to_default.content()

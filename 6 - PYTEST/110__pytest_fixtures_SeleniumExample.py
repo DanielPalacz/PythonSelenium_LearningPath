@@ -21,6 +21,7 @@ def test_setup():
     driver.quit()
 
 
+@pytest.mark.skipif
 def test_method(test_setup):
     assert driver.title == "Strona testowa", "Assertion failed"
 

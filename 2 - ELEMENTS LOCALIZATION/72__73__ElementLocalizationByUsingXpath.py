@@ -47,11 +47,20 @@ driver.find_elements_by_xpath("//button[@id='clickOnMe']")
 driver.find_elements_by_xpath("//input[@name='fname']/following-sibling::table")
 print(len(driver.find_elements_by_xpath("//th")))
 
+
 driver.find_elements_by_xpath("//*[@id='idOfYourHiddenElement' and @type='hidden']")
 driver.find_element_by_xpath("//input[@type='radio'][@value='other']").click()
+# traverse mechanism example
+driver.find_element_by_xpath("//form[@type='radio']/div[1]/label").click()
+
 
 # Combine the conditions within the [...]
 # E.g., //div[@class='xxxx' and contains(text(), 'justin')].
 
 # the above examples will find "THE FIRST ELEMENT"
 # if all matching elements should be found then use: driver.find_elements_by_xpath()
+
+
+x_webel = driver.find_element_by_xpath("//form/parent::div[@class='aaa']")
+x_webel.find_element_by_xpath("......")
+

@@ -25,7 +25,9 @@ auto_select = Select(driver.find_element_by_tag_name("select"))
 auto_select.select_by_visible_text("Volvo")
 auto_select.select_by_value("saab")
 auto_select.select_by_index(2)
-
+#######################################################################################################################
+# Select class provides the methods to handle options in DropDown
+#######################################################################################################################
 
 6)
 # how to mark checkbox on page

@@ -17,7 +17,10 @@ chrome_options1.add_argument("--window-size=1800,1200")
 # chrome_options.add_argument("--lang=pl")
 
 # chrome_options1.add_argument("--auto-open-devtools-for-tabs")
+######################################################################################################################
+#
 # chrome_options1.add_argument("--headless")
+######################################################################################################################
 # chrome_options1.add_experimental_option("excludeSwitches", extset)
 # chrome_options1.add_experimental_option("useAutomationExtension", False)
 # chrome_options1.add_experimental_option('mobileEmulation', mobile)
@@ -33,7 +36,6 @@ chrome_options1.add_argument("--window-size=1800,1200")
 # "preferences are not supported in headless mode ?
 # prefs = {"profile.managed_default_content_settings.images": 2}
 # options.add_experimental_option("prefs", prefs)
-
 
 
 def run_driver_check(x_options):
@@ -54,4 +56,18 @@ def run_driver_check(x_options):
     driver.quit()
 
 
-run_driver_check(chrome_options1)
+# run_driver_check(chrome_options1)
+
+
+#
+# Other Options-arguments:
+#
+# chrome_options1.add_argument("--start-maximized")
+# chrome_options1.add_argument("--ignore-certificate-errors")   --- ignore SSL certifications
+
+#
+# below userAgent concept allows simulation of "other-country behaviour"
+#
+# ua = UserAgent()
+# userAgent = ua.random
+# options.add_argument(f"user-agent={userAgent}")

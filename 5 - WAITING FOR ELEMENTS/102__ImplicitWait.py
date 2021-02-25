@@ -15,7 +15,7 @@ except WebDriverException:
     driver = webdriver.Chrome(ChromeDriverManager().install())
 
 # this is linked to every element in the script
-driver.implicitly_wait(10)
+driver.implicitly_wait(5)
 driver.get(r"D:\SeleniumPythonCourse\Waits2.html")
 driver.maximize_window()
 #
